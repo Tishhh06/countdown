@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 id="counter">Count: 0</h1>
+  <button id="increment">+</button>
+  <button id="decrement">-</button>
+
+
+  <div class="countdown">
+    <svg viewBox="-50 -50 100 100" stroke-width="5">
+      <circle r="45"></circle>
+      <circle r="45" pathLength="1"></circle>
+    </svg>
+  </div>
+
+  <script>
+    let count = 0;
+
+    document.getElementById("increment").addEventListener("click", increment);
+    document.getElementById("decrement").addEventListener("click", decrement);
+
+    function increment() {
+      count++;
+      updateCounter();
+    }
+
+    function decrement() {
+      count--;
+      updateCounter();
+    }
+
+    function updateCounter() {
+      document.getElementById("counter").innerHTML = `Count: ${count}`;
+    }
+
+  </script>
+</body>
+
+</html>
